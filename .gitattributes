@@ -1,0 +1,4 @@
+Content/StarterContent/ filter=lfs diff=lfs merge=lfs -text
+Content/LevelPrototyping/ filter=lfs diff=lfs merge=lfs -text
+Content/FirstPerson filter=lfs diff=lfs merge=lfs -text
+Content/FirstPersonArms/ filter=lfs diff=lfs merge=lfs -text
