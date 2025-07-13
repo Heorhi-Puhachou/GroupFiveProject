@@ -1,3 +1,12 @@
-# GrenadeLauncher
+# GroupFiveProject
 
-Developed with Unreal Engine 5
+Project for LABA course.
+
+Creators:
+- Heorhi Puhachou
+- 
+- 
+-
+
+Сurator:
+- Maciej Celmer
