@@ -31,17 +31,16 @@ void UWatcherActorComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 
 	const FVector PlayerLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
 	const FVector ObjectLocation = GetOwner()->GetActorLocation();
-	const FVector FacingVector = PlayerLocation - ObjectLocation;
-	const bool isPlayerInRange = ReactionDistance > FacingVector.Size();
+	const float Distance = FVector::Dist(PlayerLocation, ObjectLocation);
 
-	if (isPlayerInRange)
+	if (ReactionDistance > Distance)
 	{
 		FHitResult Result;
 		GetWorld()->LineTraceSingleByChannel(Result, PlayerLocation, ObjectLocation, ECollisionChannel::ECC_Visibility);
 		const bool isPlayerVisible = Result.GetActor() == GetOwner();
 		if (isPlayerVisible)
 		{
-			const FRotator FacingRotator = FacingVector.Rotation();
+			const FRotator FacingRotator = (PlayerLocation - ObjectLocation).Rotation();
 			GetOwner()->SetActorRotation(FacingRotator, ETeleportType::None);
 		}
 	}
