@@ -65,14 +65,18 @@ void UGroupFiveProjectWeaponComponent::Fire()
 		}
 	}
 
-	// Try and play the sound if specified
-	if (FireSound != nullptr)
+	if (HasAmmo && FireSound != nullptr)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, FireSound, Character->GetActorLocation());
 	}
 
+	if (!HasAmmo && NoFireSound != nullptr)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, NoFireSound, Character->GetActorLocation());
+	}
+
 	// Try and play a firing animation if specified
-	if (FireAnimation != nullptr)
+	if (HasAmmo && FireAnimation != nullptr)
 	{
 		// Get the animation object for the arms mesh
 		UAnimInstance *AnimInstance = Character->GetMesh1P()->GetAnimInstance();

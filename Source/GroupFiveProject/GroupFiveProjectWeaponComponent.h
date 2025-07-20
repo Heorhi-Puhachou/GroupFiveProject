@@ -18,9 +18,13 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = Projectile)
 	TSubclassOf<class AGroupFiveProjectProjectile> ProjectileClass;
 
-	/** Sound to play each time we fire */
+	/** Sound to play each time we fire with ammo*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	USoundBase *FireSound;
+
+	/** Sound to play each time we fire without ammo*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	USoundBase *NoFireSound;
 
 	/** AnimMontage to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
