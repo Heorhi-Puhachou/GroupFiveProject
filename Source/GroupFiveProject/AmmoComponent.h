@@ -23,10 +23,22 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
+	UFUNCTION(BlueprintPure)
 	int GetCurrentAmmo();
+
+	UFUNCTION(BlueprintPure)
+	bool HasAmmo();
+
+	UFUNCTION(BlueprintCallable)
 	void addAmmo(int amount);
 
+	UFUNCTION(BlueprintCallable)
+	void useAmmo();
+
 protected:
+	UPROPERTY(EditDefaultsOnly)
 	int CurrentAmmo = 0;
+
+	UPROPERTY(EditDefaultsOnly)
 	int MaxAmmo = 100;
 };

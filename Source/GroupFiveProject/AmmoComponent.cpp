@@ -30,9 +30,24 @@ void UAmmoComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 
 int UAmmoComponent::GetCurrentAmmo()
 {
-	return 0;
+	return CurrentAmmo;
+}
+
+bool UAmmoComponent::HasAmmo()
+{
+    return CurrentAmmo > 0;
 }
 
 void UAmmoComponent::addAmmo(int amount)
 {
+	CurrentAmmo += amount;
+	CurrentAmmo = FMath::Clamp(CurrentAmmo, 0, MaxAmmo);
+}
+
+void UAmmoComponent::useAmmo()
+{
+	if (CurrentAmmo > 0)
+	{
+		CurrentAmmo--;
+	}
 }

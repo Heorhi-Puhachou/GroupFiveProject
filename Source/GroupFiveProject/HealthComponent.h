@@ -19,23 +19,36 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	UFUNCTION()
+	void OnTakeAnyDamage(AActor *DamageActor,
+						 float Damage,
+						 const class UDamageType *DamageType,
+						 class AController *InstigateBy,
+						 AActor *DamageCauser);
+
 public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
+	UFUNCTION(BlueprintPure)
 	float GetCurrentHealth();
 
+	UFUNCTION(BlueprintPure)
 	float GetDamagePercent();
 
+	UFUNCTION(BlueprintCallable)
 	void Heal(float healAmount);
 
+	UFUNCTION(BlueprintCallable)
 	void Damage(float damageAmount);
 
+	UFUNCTION(BlueprintPure)
 	bool IsDead();
 
-	void Kill();
-
 protected:
-	float CurrentHealth = 0.0f;
+	UPROPERTY(EditDefaultsOnly)
+	float CurrentHealth = 100.0f;
+
+	UPROPERTY(EditDefaultsOnly)
 	float MaxHealth = 100.0f;
 };
