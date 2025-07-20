@@ -62,7 +62,7 @@ protected:
 
 	/** Can we fire or not */
 	UPROPERTY(EditDefaultsOnly)
-	bool HasAmmo = true;
+	bool HasAmmo = false;
 
 private:
 	/** The Character holding this weapon*/
