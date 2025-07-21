@@ -22,15 +22,16 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION()
-	void OnTakeAnyDamage(AActor *DamageActor,
-						 float Damage,
-						 const UDamageType *DamageType,
-						 AController *InstigateBy,
-						 AActor *DamageCauser);
+	void OnTakeAnyDamage(AActor* DamageActor,
+	                     float Damage,
+	                     const UDamageType* DamageType,
+	                     AController* InstigateBy,
+	                     AActor* DamageCauser);
 
 public:
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
+	                           FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(BlueprintPure)
 	float GetCurrentHealth();
