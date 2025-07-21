@@ -41,6 +41,11 @@ float UHealthComponent::GetCurrentHealth()
 	return CurrentHealth;
 }
 
+float UHealthComponent::GetMaxHealth()
+{
+	return MaxHealth;
+}
+
 float UHealthComponent::GetDamagePercent()
 {
 	return 1 - CurrentHealth / MaxHealth;

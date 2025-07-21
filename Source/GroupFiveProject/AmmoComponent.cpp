@@ -35,6 +35,11 @@ int UAmmoComponent::GetCurrentAmmo()
 	return CurrentAmmo;
 }
 
+int UAmmoComponent::GetMaxAmmo()
+{
+	return MaxAmmo;
+}
+
 bool UAmmoComponent::HasAmmo()
 {
 	return CurrentAmmo > 0;

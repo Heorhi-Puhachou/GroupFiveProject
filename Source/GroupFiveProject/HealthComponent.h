@@ -39,6 +39,9 @@ public:
 	float GetCurrentHealth();
 
 	UFUNCTION(BlueprintPure)
+	float GetMaxHealth();
+
+	UFUNCTION(BlueprintPure)
 	float GetDamagePercent();
 
 	UFUNCTION(BlueprintCallable)

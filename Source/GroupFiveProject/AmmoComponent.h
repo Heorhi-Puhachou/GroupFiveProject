@@ -30,6 +30,9 @@ public:
 	int GetCurrentAmmo();
 
 	UFUNCTION(BlueprintPure)
+	int GetMaxAmmo();
+
+	UFUNCTION(BlueprintPure)
 	bool HasAmmo();
 
 	UFUNCTION(BlueprintCallable)
