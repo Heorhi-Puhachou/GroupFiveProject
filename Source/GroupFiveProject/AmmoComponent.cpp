@@ -23,7 +23,7 @@ void UAmmoComponent::BeginPlay()
 }
 
 // Called every frame
-void UAmmoComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction)
+void UAmmoComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
@@ -37,7 +37,7 @@ int UAmmoComponent::GetCurrentAmmo()
 
 bool UAmmoComponent::HasAmmo()
 {
-    return CurrentAmmo > 0;
+	return CurrentAmmo > 0;
 }
 
 void UAmmoComponent::addAmmo(int amount)
@@ -61,12 +61,12 @@ void UAmmoComponent::printLog(std::string string, int number)
 
 void UAmmoComponent::useAmmo()
 {
-	printLog("Max - ", MaxAmmo);
-	printLog("Current - ", CurrentAmmo);
+	//printLog("Max - ", MaxAmmo);
+	//printLog("Current - ", CurrentAmmo);
 	if (CurrentAmmo > 0)
 	{
 		CurrentAmmo--;
 		OnAmmoChanged.Broadcast(CurrentAmmo, MaxAmmo);
 	}
-	printLog("After use - ", CurrentAmmo);
+	//printLog("After use - ", CurrentAmmo);
 }
