@@ -3,5 +3,4 @@
 #include "GroupFiveProject.h"
 #include "Modules/ModuleManager.h"
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, GroupFiveProject, "GroupFiveProject" );
- 
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, GroupFiveProject, "GroupFiveProject");

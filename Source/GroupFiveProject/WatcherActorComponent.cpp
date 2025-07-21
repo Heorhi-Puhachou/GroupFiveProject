@@ -21,9 +21,9 @@ void UWatcherActorComponent::BeginPlay()
 }
 
 // Called every frame
-void UWatcherActorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction)
+void UWatcherActorComponent::TickComponent(float DeltaTime, ELevelTick TickType,
+                                           FActorComponentTickFunction* ThisTickFunction)
 {
-
 	// Lepiej byłoby najpierw sprawdzić sam dystans, jeżeli jesteśmy za daleko to już nie ma sansu robić Trace'a (który jest kosztowny).
 	// Sam dystans też lepiej byłoby porównywać w formie skwadratowanej. Pomocnicze zmienne (np PlayerLocation ) powinny być const,
 

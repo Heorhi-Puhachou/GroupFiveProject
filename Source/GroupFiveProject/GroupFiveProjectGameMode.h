@@ -14,6 +14,3 @@ class AGroupFiveProjectGameMode : public AGameModeBase
 public:
 	AGroupFiveProjectGameMode();
 };
-
-
-

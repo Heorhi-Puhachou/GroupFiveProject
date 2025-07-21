@@ -34,13 +34,13 @@ void UGrabberComponent::BeginPlay()
 }
 
 // Called every frame
-void UGrabberComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction)
+void UGrabberComponent::TickComponent(float DeltaTime, ELevelTick TickType,
+                                      FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	if (m_PhysicsHandle && m_PhysicsHandle->GetGrabbedComponent())
 	{
-
 		FHitResult Result;
 		FVector Start;
 		FVector End;
@@ -90,11 +90,11 @@ void UGrabberComponent::Grab()
 	if (Result.GetActor())
 	{
 		// UE_LOG(LogTemp, Warning, TEXT("Item found: %s"), *Result.GetActor()->GetName());
-		UPrimitiveComponent *Component = Result.GetComponent();
+		UPrimitiveComponent* Component = Result.GetComponent();
 		m_PhysicsHandle->GrabComponentAtLocationWithRotation(Component,
-															 FName(),
-															 Component->GetComponentLocation(),
-															 Component->GetComponentRotation());
+		                                                     FName(),
+		                                                     Component->GetComponentLocation(),
+		                                                     Component->GetComponentRotation());
 	}
 }
 
@@ -102,8 +102,7 @@ void UGrabberComponent::Throw()
 {
 	if (m_PhysicsHandle && m_PhysicsHandle->GetGrabbedComponent())
 	{
-
-		UPrimitiveComponent *Component = m_PhysicsHandle->GetGrabbedComponent();
+		UPrimitiveComponent* Component = m_PhysicsHandle->GetGrabbedComponent();
 
 		FVector Impulse;
 		FVector Start;

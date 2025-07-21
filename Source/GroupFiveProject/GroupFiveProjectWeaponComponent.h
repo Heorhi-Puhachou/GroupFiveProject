@@ -20,15 +20,15 @@ public:
 
 	/** Sound to play each time we fire with ammo*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-	USoundBase *FireSound;
+	USoundBase* FireSound;
 
 	/** Sound to play each time we fire without ammo*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-	USoundBase *NoFireSound;
+	USoundBase* NoFireSound;
 
 	/** AnimMontage to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-	UAnimMontage *FireAnimation;
+	UAnimMontage* FireAnimation;
 
 	/** Gun muzzle's offset from the characters location */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
@@ -36,18 +36,18 @@ public:
 
 	/** MappingContext */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	class UInputMappingContext *FireMappingContext;
+	class UInputMappingContext* FireMappingContext;
 
 	/** Fire Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	class UInputAction *FireAction;
+	class UInputAction* FireAction;
 
 	/** Sets default values for this component's properties */
 	UGroupFiveProjectWeaponComponent();
 
 	/** Attaches the actor to a FirstPersonCharacter */
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
-	bool AttachWeapon(AGroupFiveProjectCharacter *TargetCharacter);
+	bool AttachWeapon(AGroupFiveProjectCharacter* TargetCharacter);
 
 	/** Make the weapon Fire a Projectile */
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
@@ -70,5 +70,5 @@ protected:
 
 private:
 	/** The Character holding this weapon*/
-	AGroupFiveProjectCharacter *Character;
+	AGroupFiveProjectCharacter* Character;
 };

@@ -23,7 +23,8 @@ protected:
 
 public:
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
+	                           FActorComponentTickFunction* ThisTickFunction) override;
 
 	void Interact();
 	void Grab();
@@ -37,6 +38,6 @@ private:
 	UPROPERTY(EditAnywhere)
 	float m_ImpulseStrenght = 1000.0f;
 
-	UInputComponent *m_InputComponent = nullptr;
-	UPhysicsHandleComponent *m_PhysicsHandle = nullptr;
+	UInputComponent* m_InputComponent = nullptr;
+	UPhysicsHandleComponent* m_PhysicsHandle = nullptr;
 };
