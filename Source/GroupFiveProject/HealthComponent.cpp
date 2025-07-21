@@ -60,6 +60,10 @@ void UHealthComponent::Damage(float damageAmount)
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0, MaxHealth);
 
 	OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
+	if (CurrentHealth <= 0)
+	{
+		OnDeath.Broadcast(GetOwner());
+	}
 }
 
 bool UHealthComponent::IsDead()

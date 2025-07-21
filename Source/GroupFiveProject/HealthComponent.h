@@ -8,6 +8,8 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHealthChangedDelegate, float, CurrentHealth, float, MaxHealth);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDeathDelegate, AActor*, Actor);
+
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class GROUPFIVEPROJECT_API UHealthComponent : public UActorComponent
 {
@@ -50,6 +52,9 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChangedDelegate OnHealthChanged;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnDeathDelegate OnDeath;
 
 protected:
 	UPROPERTY(EditDefaultsOnly)
