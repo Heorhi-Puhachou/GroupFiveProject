@@ -98,43 +98,43 @@ UnrealGame-LinuxArm64-Shipping:
 UnrealGame: UnrealGame-Linux-Development
 
 GroupFiveProject-Android-DebugGame:
-	 $(BUILD) GroupFiveProject Android DebugGame  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject Android DebugGame  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject-Android-Development:
-	 $(BUILD) GroupFiveProject Android Development  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject Android Development  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject-Android-Shipping:
-	 $(BUILD) GroupFiveProject Android Shipping  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject Android Shipping  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject-Linux-DebugGame:
-	 $(BUILD) GroupFiveProject Linux DebugGame  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject Linux DebugGame  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject-Linux-Development:
-	 $(BUILD) GroupFiveProject Linux Development  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject Linux Development  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject-Linux-Shipping:
-	 $(BUILD) GroupFiveProject Linux Shipping  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject Linux Shipping  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject-LinuxArm64-DebugGame:
-	 $(BUILD) GroupFiveProject LinuxArm64 DebugGame  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject LinuxArm64 DebugGame  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject-LinuxArm64-Development:
-	 $(BUILD) GroupFiveProject LinuxArm64 Development  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject LinuxArm64 Development  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject-LinuxArm64-Shipping:
-	 $(BUILD) GroupFiveProject LinuxArm64 Shipping  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProject LinuxArm64 Shipping  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProject: GroupFiveProject-Linux-Development
 
 GroupFiveProjectEditor-Linux-DebugGame:
-	 $(BUILD) GroupFiveProjectEditor Linux DebugGame  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProjectEditor Linux DebugGame  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProjectEditor-Linux-Development:
-	 $(BUILD) GroupFiveProjectEditor Linux Development  -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
+	 $(BUILD) GroupFiveProjectEditor Linux Development  -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" $(ARGS)
 
 GroupFiveProjectEditor: GroupFiveProjectEditor-Linux-Development
 
 configure:
-	$(BUILD) -ProjectFiles -Project="/home/heorhij/Дакументы/Unreal Projects/GroupFiveProject/GroupFiveProject.uproject" -Game 
+	$(BUILD) -ProjectFiles -Project="/home/heorhij/GroupFiveProject/GroupFiveProject.uproject" -Game 
 
 .PHONY: $(TARGETS)

@@ -7,7 +7,7 @@ UHealthComponent::UHealthComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bCanEverTick = false;
 
 	// ...
 }
@@ -51,12 +51,16 @@ void UHealthComponent::Heal(float healAmount)
 {
 	CurrentHealth += healAmount;
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0, MaxHealth);
+
+	OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
 }
 
 void UHealthComponent::Damage(float damageAmount)
 {
 	CurrentHealth -= damageAmount;
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0, MaxHealth);
+
+	OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
 }
 
 bool UHealthComponent::IsDead()

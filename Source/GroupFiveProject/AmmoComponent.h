@@ -6,6 +6,8 @@
 #include "Components/ActorComponent.h"
 #include "AmmoComponent.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnAmmoChangedDelegate, int, CurrentAmmo, int, MaxAmmo);
+
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class GROUPFIVEPROJECT_API UAmmoComponent : public UActorComponent
 {
@@ -35,10 +37,16 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void useAmmo();
 
+	UPROPERTY(BlueprintAssignable)
+	FOnAmmoChangedDelegate OnAmmoChanged;
+
 protected:
 	UPROPERTY(EditDefaultsOnly)
 	int CurrentAmmo = 0;
 
 	UPROPERTY(EditDefaultsOnly)
 	int MaxAmmo = 100;
+
+private:
+	void printLog(std::string string, int number);
 };

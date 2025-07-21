@@ -6,6 +6,8 @@
 #include "Components/ActorComponent.h"
 #include "HealthComponent.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHealthChangedDelegate, float, CurrentHealth, float, MaxHealth);
+
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class GROUPFIVEPROJECT_API UHealthComponent : public UActorComponent
 {
@@ -22,8 +24,8 @@ protected:
 	UFUNCTION()
 	void OnTakeAnyDamage(AActor *DamageActor,
 						 float Damage,
-						 const class UDamageType *DamageType,
-						 class AController *InstigateBy,
+						 const UDamageType *DamageType,
+						 AController *InstigateBy,
 						 AActor *DamageCauser);
 
 public:
@@ -44,6 +46,9 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	bool IsDead();
+
+	UPROPERTY(BlueprintAssignable)
+	FOnHealthChangedDelegate OnHealthChanged;
 
 protected:
 	UPROPERTY(EditDefaultsOnly)
