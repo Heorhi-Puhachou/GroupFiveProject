@@ -74,3 +74,10 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 
 Content/StarterContent/Props/SM_Bush.uasset
+
+# Rider files
+/.idea/.idea.GroupFiveProject.dir/.idea/.gitignore
+/.idea/.idea.GroupFiveProject.dir/.idea/encodings.xml
+/.idea/.idea.GroupFiveProject.dir/.idea/indexLayout.xml
+/.idea/.idea.GroupFiveProject.dir/.idea/vcs.xml
+
