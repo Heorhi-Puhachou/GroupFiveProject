@@ -9,7 +9,7 @@ Keywords:
 
 Creators:
 - Heorhi Puhachou
-- 
+- Mikołaj Mackiewicz
 - 
 -
 
