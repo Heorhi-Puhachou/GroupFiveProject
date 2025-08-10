@@ -24,5 +24,29 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+protected:
+	UPROPERTY(EditDefaultsOnly)
+	FVector North;
+
+	UPROPERTY(EditDefaultsOnly)
+	FVector East;
+
+	UPROPERTY(EditDefaultsOnly)
+	FVector South;
+
+	UPROPERTY(EditDefaultsOnly)
+	FVector West;
+
+public:
+	UFUNCTION(BlueprintPure)
+	FVector GetNorth();
+
+	UFUNCTION(BlueprintPure)
+	FVector GetEast();
+
+	UFUNCTION(BlueprintPure)
+	FVector GetSouth();
+
+	UFUNCTION(BlueprintPure)
+	FVector GetWest();
 };
