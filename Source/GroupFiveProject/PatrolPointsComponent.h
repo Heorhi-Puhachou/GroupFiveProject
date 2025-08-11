@@ -40,7 +40,7 @@ protected:
 	std::vector<FVector> PatrolPoints;
 
 	//  dwa tryby patrolowania: cyklicznie (true) i ze zmianą kierunku (false)
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditAnywhere)
 	bool CyclePatrol = false;
 
 	int MaxPatrolPointsIndex;
