@@ -26,18 +26,12 @@ public:
 	                           FActorComponentTickFunction* ThisTickFunction) override;
 
 protected:
-	FVector NorthPoint;
-	
-	FVector EastPoint;
-	
-	FVector SouthPoint;
-	
-	FVector WestPoint;
 
 	UPROPERTY(EditAnywhere)
 	float PatrolRadius = 2000.0f;
 
-	std::vector<FVector> PatrolPoints;
+	UPROPERTY(EditAnywhere)
+	TArray<FVector> PatrolPoints;
 
 	//  dwa tryby patrolowania: cyklicznie (true) i ze zmianą kierunku (false)
 	UPROPERTY(EditAnywhere)

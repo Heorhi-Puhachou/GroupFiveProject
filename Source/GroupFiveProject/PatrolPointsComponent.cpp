@@ -19,24 +19,7 @@ void UPatrolPointsComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	const FVector NPCLocation = GetOwner()->GetActorLocation();
-
-	NorthPoint = FVector(NPCLocation.X, NPCLocation.Y + PatrolRadius, NPCLocation.Z);
-	EastPoint = FVector(NPCLocation.X + PatrolRadius, NPCLocation.Y, NPCLocation.Z);
-	SouthPoint = FVector(NPCLocation.X, NPCLocation.Y - PatrolRadius, NPCLocation.Z);
-	WestPoint = FVector(NPCLocation.X - PatrolRadius, NPCLocation.Y, NPCLocation.Z);
-
-	PatrolPoints = {NorthPoint, EastPoint, SouthPoint, WestPoint, SouthPoint, EastPoint};
-
-	if (CyclePatrol)
-	{
-		// Original Vector includes points for patrol with reverse, for cycle needed only first unique elements.
-		MaxPatrolPointsIndex = 4;
-	}
-	else
-	{
-		MaxPatrolPointsIndex = PatrolPoints.size();
-	}
+	MaxPatrolPointsIndex = PatrolPoints.Num();
 }
 
 
