@@ -28,9 +28,6 @@ public:
 protected:
 
 	UPROPERTY(EditAnywhere)
-	float PatrolRadius = 2000.0f;
-
-	UPROPERTY(EditAnywhere)
 	TArray<FVector> PatrolPoints;
 
 	//  dwa tryby patrolowania: cyklicznie (true) i ze zmianą kierunku (false)
