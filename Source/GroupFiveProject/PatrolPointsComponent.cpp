@@ -2,6 +2,7 @@
 
 
 #include "PatrolPointsComponent.h"
+#include "Algo/Reverse.h"
 
 // Sets default values for this component's properties
 UPatrolPointsComponent::UPatrolPointsComponent()
@@ -19,6 +20,28 @@ void UPatrolPointsComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+
+	if (!CyclePatrol)
+	{
+		TArray<FVector> Reversed = PatrolPoints;
+		Algo::Reverse(Reversed);
+
+		TArray<FVector> OriginalAndReversedArray;
+
+		// Add original array
+		for (FVector point : PatrolPoints)
+		{
+			OriginalAndReversedArray.Add(point);
+		}
+
+		// Not included first and last reversed elements to prevent duplicates on path:
+		// 1 2 3 4 (4) 3 2 (1)
+		for (int i = 1; i < PatrolPoints.Num() - 1; i++)
+		{
+			OriginalAndReversedArray.Add(Reversed[i]);
+		}
+		PatrolPoints = OriginalAndReversedArray;
+	}
 	MaxPatrolPointsIndex = PatrolPoints.Num();
 }
 
@@ -36,6 +59,7 @@ FVector UPatrolPointsComponent::GetNextPoint()
 {
 	FVector ReturnValue = PatrolPoints[CurrentPatrolPointIndex];
 	CurrentPatrolPointIndex++;
+
 	if (CurrentPatrolPointIndex == MaxPatrolPointsIndex)
 	{
 		CurrentPatrolPointIndex = 0;
