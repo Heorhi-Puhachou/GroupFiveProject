@@ -48,26 +48,6 @@ void UPatrolPointsComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 	// ...
 }
 
-FVector UPatrolPointsComponent::GetNorthPoint()
-{
-	return NorthPoint;
-}
-
-FVector UPatrolPointsComponent::GetEastPoint()
-{
-	return EastPoint;
-}
-
-FVector UPatrolPointsComponent::GetSouthPoint()
-{
-	return SouthPoint;
-}
-
-FVector UPatrolPointsComponent::GetWestPoint()
-{
-	return WestPoint;
-}
-
 FVector UPatrolPointsComponent::GetNextPoint()
 {
 	FVector ReturnValue = PatrolPoints[CurrentPatrolPointIndex];

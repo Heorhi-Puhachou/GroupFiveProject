@@ -26,20 +26,16 @@ public:
 	                           FActorComponentTickFunction* ThisTickFunction) override;
 
 protected:
-	UPROPERTY(EditDefaultsOnly)
 	FVector NorthPoint;
-
-	UPROPERTY(EditDefaultsOnly)
+	
 	FVector EastPoint;
-
-	UPROPERTY(EditDefaultsOnly)
+	
 	FVector SouthPoint;
-
-	UPROPERTY(EditDefaultsOnly)
+	
 	FVector WestPoint;
 
 	UPROPERTY(EditAnywhere)
-	float PatrolRadius = 1000.0f;
+	float PatrolRadius = 2000.0f;
 
 	std::vector<FVector> PatrolPoints;
 
@@ -52,17 +48,6 @@ protected:
 	int CurrentPatrolPointIndex = 0;
 
 public:
-	UFUNCTION(BlueprintPure)
-	FVector GetNorthPoint();
-
-	UFUNCTION(BlueprintPure)
-	FVector GetEastPoint();
-
-	UFUNCTION(BlueprintPure)
-	FVector GetSouthPoint();
-
-	UFUNCTION(BlueprintPure)
-	FVector GetWestPoint();
 
 	UFUNCTION(BlueprintPure)
 	FVector GetNextPoint();
