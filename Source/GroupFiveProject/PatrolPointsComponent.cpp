@@ -21,7 +21,7 @@ void UPatrolPointsComponent::BeginPlay()
 	Super::BeginPlay();
 
 
-	if (!CyclePatrol)
+	if (!CyclePatrol && PatrolPoints.Num() > 2)
 	{
 		TArray<FVector> Reversed = PatrolPoints;
 		Algo::Reverse(Reversed);
