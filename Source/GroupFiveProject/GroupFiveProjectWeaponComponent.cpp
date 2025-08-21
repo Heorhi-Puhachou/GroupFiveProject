@@ -44,6 +44,7 @@ void UGroupFiveProjectWeaponComponent::Fire()
 				ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 			if (HasAmmo)
 			{
+				// UE_LOG(LogTemp, Warning, TEXT("Spawn Projectile"));
 				// Spawn the projectile at the muzzle
 				World->SpawnActor<AGroupFiveProjectProjectile>(ProjectileClass, SpawnLocation, SpawnRotation,
 				                                               ActorSpawnParams);
